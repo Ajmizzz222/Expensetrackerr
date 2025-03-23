@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Expense Tracker</h1>
+    <p class="lead">Manage your income and expenses easily with this tracker.</p>
+    <a href="../index.html" class="btn btn-secondary">Logout</a>
+  </div>
+
+  <div class="container">
+    <h2>Income</h2>
+    <form id="incomeForm">
+      <div class="form-group">
+        <label for="incomeDescription">Description:</label>
+        <input type="text" id="incomeDescription" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="incomeAmount">Amount:</label>
+        <input type="number" id="incomeAmount" class="form-control" required>
+      </div>
+      <button type="button" id="addIncome" class="btn btn-success">Add Income</button>
+    </form>
+
+    <hr>
+
+    <h2>Expenses</h2>
+    <form id="expenseForm">
+      <div class="form-group">
+        <label for="expenseDescription">Description:</label>
+        <input type="text" id="expenseDescription" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="expenseCategory">Category:</label>
+        <select id="expenseCategory" class="form-control">
+          <option value="housing">Housing</option>
+          <option value="food">Food</option>
+          <option value="transport">Transport</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="expenseAmount">Amount:</label>
+        <input type="number" id="expenseAmount" class="form-control" required>
+      </div>
+      <button type="button" id="addExpense" class="btn btn-danger">Add Expense</button>
+    </form>
+
+    <hr>
+
+    <h2>Transaction History</h2>
+    <table class="table table-bordered" id="transactionTable">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <hr>
+
+    <h2>Budget Summary</h2>
+    <p>Total Income: <span id="totalIncome">0</span></p>
+    <p>Total Expense: <span id="totalExpense">0</span></p>
+    <p>Balance: <span id="balance">0</span></p>
+
+    <button id="clearAll" class="btn btn-warning">Clear All</button>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="../scripts/expense_tracker.js"></script>
+</body>
+</html>
